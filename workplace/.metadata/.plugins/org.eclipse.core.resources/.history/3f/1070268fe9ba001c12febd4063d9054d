@@ -1,0 +1,220 @@
+package com.pcwk.board;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.pcwk.cmn.DTO;
+import com.pcwk.cmn.JDBCUtil;
+import com.pcwk.cmn.PConnection;
+import com.pcwk.cmn.SawonVO;
+import com.pcwk.cmn.WorkDiv;
+
+public class BoardDao implements WorkDiv<BoardVO> {
+	
+	final Logger LOG = Logger.getLogger(getClass());
+	
+	private PConnection pConnection;
+	
+	public BoardDao() {
+		pConnection = new PConnection();
+	}
+
+	@Override
+	public List<BoardVO> doRetrieve(DTO dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int doSave(BoardVO dto) {
+		
+		int flag = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		StringBuilder sb = new StringBuilder(100);
+		
+		//1. DB연결
+		conn = pConnection.connect();
+		
+		//2. SQL 작성
+		sb.append("INSERT INTO board (   \n");
+		sb.append("    seq,              \n");
+		sb.append("    title,            \n");
+		sb.append("    contents,         \n");
+		sb.append("    read_cnt,         \n");
+		sb.append("    reg_id,           \n");
+		sb.append("    mod_id            \n");
+		sb.append(") VALUES (            \n");
+		sb.append("    ?,              \n");
+		sb.append("    ?,              \n");
+		sb.append("    ?,              \n");
+		sb.append("    ?,              \n");
+		sb.append("    ?,              \n");
+		sb.append("    ?               \n");
+		sb.append(")                     \n");
+		
+		LOG.debug("query : \n"+sb.toString());
+		LOG.debug("param : "+ dto.toString());
+		
+		try {
+		//3. param전달
+			pstmt = conn.prepareStatement(sb.toString());
+			pstmt.setInt(1, dto.getSeq());
+			pstmt.setString(2, dto.getTitle());
+			pstmt.setString(3, dto.getContents());
+			pstmt.setInt(4, 0);
+			pstmt.setString(5, dto.getReg_id());
+			pstmt.setString(6, dto.getMod_id());
+			
+		//4. SQL 실행
+			flag = pstmt.executeUpdate();
+		
+		//5. SQL실행결과	
+			LOG.debug("flag : "+ flag);
+			
+		}catch(SQLException e) {
+			LOG.debug("SQLException : "+ e.getMessage());
+			e.printStackTrace();
+		//6. 자원반납
+		}finally {
+			
+			JDBCUtil.close(pstmt);
+			
+			JDBCUtil.close(conn);
+			
+		}
+		
+		return flag;
+	}
+
+	@Override
+	public int doDelete(BoardVO dto) {
+		int flag = 0;
+		
+		Connection conn = null;//DB연결 정보
+		PreparedStatement pstmt = null;//sql+데이터
+		StringBuilder sb = new StringBuilder(100);		
+		
+		//1. DB연결
+		conn = pConnection.connect();
+				
+		//2. SQL작성
+		sb.append(" DELETE FROM board   \n");
+		sb.append(" WHERE SEQ = ?     \n");
+
+		LOG.debug("query : \n"+ sb.toString());
+		LOG.debug("param : \n"+ dto.toString());	
+		
+		try {
+			//트렌젝션 처리
+			//conn.setAutoCommit(true);트랜젝션 자동 commit
+			
+			pstmt = conn.prepareStatement(sb.toString());
+			pstmt.setInt(1, dto.getSeq());
+			
+		//4. SQL실행
+			flag = pstmt.executeUpdate();
+			
+		//5. SQL실행결과
+			LOG.debug("flag : "+ flag);
+			
+		}catch(SQLException e) {
+			LOG.debug("SQLException : "+ e.getMessage());
+			e.printStackTrace();
+			
+		//6. 자원반납
+		}finally {
+				
+			//pstmt 자원반납
+			JDBCUtil.close(pstmt);
+				
+			//conn 자원반납
+			JDBCUtil.close(conn);
+		}		
+		
+		return flag;
+	}
+
+	@Override
+	public BoardVO doSelectOne(BoardVO dto) {
+		BoardVO outVO = null; //return
+		Connection conn = null;//DB연결 정보
+		PreparedStatement pstmt = null;//SQL + 데이터
+		ResultSet rs = null;//DB에서 전달된 정보 수축
+		StringBuilder sb = new StringBuilder(50);
+		
+		//1. DB연결
+		conn = pConnection.connect();
+				
+		//2. SQL작성		
+	sb.append(" SELECT                                                   \n");
+	sb.append("     seq,                                                 \n");
+	sb.append("     title,                                               \n");
+	sb.append("     contents,                                            \n");
+	sb.append("     read_cnt,                                            \n");
+	sb.append("     TO_CHAR(reg_dt,'YYYY/MM/DD HH24:MI:SS') AS reg_dt,   \n");
+	sb.append("     reg_id,                                              \n");
+	sb.append("     TO_CHAR(mod_dt,'YYYY/MM/DD HH24:MI:SS') AS mod_dt,   \n");
+	sb.append("     mod_id                                               \n");
+	sb.append(" FROM board                                               \n");
+	sb.append(" WHERE seq = ?                                            \n");
+		
+    LOG.debug("query: \n "+ sb.toString());
+	LOG.debug("param : "+ dto.toString());	
+		
+	try {
+		
+		pstmt = conn.prepareStatement(sb.toString());
+		pstmt.setInt(1,dto.getSeq());
+		
+	//4. SQL실행 : ResultSet
+		rs = pstmt.executeQuery();
+		
+	//5. retuurn 받은 ResultSet에서 DB에서 전달된 데이터 추출	
+		if(rs.next()) {
+			outVO = new BoardVO();
+			outVO.setSeq(rs.getInt("seq"));
+			outVO.setTitle(rs.getString("title"));
+			outVO.setContents(rs.getString("contents"));
+			outVO.setRead_cnt(rs.getInt("read"));
+			outVO.setReg_dt(rs.getString("reg_dt"));	
+			outVO.setReg_id(rs.getString("reg_id"));	
+			outVO.setMod_dt(rs.getString("mod_dt"));	
+			outVO.setMod_id(rs.getString("mod_id"));	
+		}
+		LOG.debug("outVO: "+outVO);
+		
+	}catch(SQLException e) {
+		
+		LOG.debug("SQLException : "+ e.getMessage());
+		
+	}finally {
+		
+		//rs 자원반납
+		JDBCUtil.close(rs);
+		
+		//pstmt 자원반납
+		JDBCUtil.close(pstmt);
+		
+		//conn 자원반납
+		JDBCUtil.close(conn);
+	}		
+		
+		
+		
+		
+		return outVO;
+	}
+
+	@Override
+	public int doUpdate(BoardVO dto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

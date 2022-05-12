@@ -1,0 +1,7 @@
+package com.pcwk.board;
+
+import com.pcwk.cmn.DTO;
+
+public class BoardVO extends DTO {
+
+}

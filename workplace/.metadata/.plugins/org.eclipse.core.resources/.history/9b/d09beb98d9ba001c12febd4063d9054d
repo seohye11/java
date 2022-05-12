@@ -1,0 +1,26 @@
+package com.pcwk.board;
+
+import org.apache.log4j.Logger;
+
+import com.pcwk.cmn.SearchVO;
+
+public class BoardMain {
+	
+	final Logger LOG = Logger.getLogger(getClass());
+	private BoardDao dao;
+	private BoardVO board01;
+	private SearchVO search01;
+	
+	public BoardMain() {
+		dao = new BoardDao();
+		board01 = new BoardVO(900001, "제목_900001", "내용_90001", 0, "", "pcwk", "","pcwk");
+		
+		search01 = new SearchVO("", "", 10, 1);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

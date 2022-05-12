@@ -1,0 +1,10 @@
+package com.pcwk.cmn;
+
+public class SearchVO extends DTO{
+	
+	//검색구분
+	//검색어
+	//페이지 사이즈
+	//페이지 번호
+
+}

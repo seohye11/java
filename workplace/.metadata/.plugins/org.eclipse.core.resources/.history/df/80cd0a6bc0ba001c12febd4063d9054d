@@ -1,0 +1,26 @@
+package com.pcwk.cmn;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.apache.log4j.Logger;
+
+public class JDBCUtil {
+	
+	final static Logger LOG = Logger.getLogger(JDBCUtil.class)
+	/**
+	 * ResultSetÀÚ¿ø¹Ý³³
+	 * @param rs
+	 */
+	public static void close(ResultSet rs) {
+		if(null != rs) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+
+}

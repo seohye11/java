@@ -1,0 +1,83 @@
+2022-03-08 17:11:03,727 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:12:03,426 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:14:58,150 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:15:33,667 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:16:56,081 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:18:43,446 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:19:47,597 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:19:59,139 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:23:25,101 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:25:39,390 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:26:12,305 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:26:55,442 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:27:46,125 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:28:22,432 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:29:07,363 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:30:27,208 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:31:32,994 DEBUG [main] cmn.LoggerManager (MovieDao.java:103)     - ======================
+2022-03-08 17:31:32,996 DEBUG [main] cmn.LoggerManager (MovieDao.java:104)     - IOExceptionC:\DCOM_20220127\01_JAVA\workspace\Java_MC\src\com\pcwk\mc\movie (지정된 파일을 찾을 수 없습니다)
+2022-03-08 17:31:32,996 DEBUG [main] cmn.LoggerManager (MovieDao.java:105)     - ======================
+2022-03-08 17:31:32,996 DEBUG [main] cmn.LoggerManager (MovieDao.java:25)     - 파일 읽기 실패
+2022-03-08 17:32:10,840 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:32:39,411 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:32:52,420 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:33:19,176 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:35:01,812 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:35:18,598 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:35:18,600 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:38:00,924 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:39:05,998 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:45:34,814 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:46:48,485 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:51:38,170 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 17:54:33,588 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:08:51,104 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:09:46,402 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:17:37,793 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:21:46,365 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:23:47,274 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:24:39,838 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:25:15,744 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:25:24,233 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:25:32,688 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:25:38,863 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:27:28,562 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 18:28:09,693 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 21:08:43,921 DEBUG [main] cmn.LoggerManager (MovieDao.java:103)     - ======================
+2022-03-08 21:08:43,926 DEBUG [main] cmn.LoggerManager (MovieDao.java:104)     - IOExceptionC:\DCOM_20220127\01_JAVA\workspace\Java_MC\src\com\pcwk\mc\movie.csv (지정된 경로를 찾을 수 없습니다)
+2022-03-08 21:08:43,926 DEBUG [main] cmn.LoggerManager (MovieDao.java:105)     - ======================
+2022-03-08 21:08:43,926 DEBUG [main] cmn.LoggerManager (MovieDao.java:25)     - 파일 읽기 실패
+2022-03-08 21:14:54,819 DEBUG [main] cmn.LoggerManager (MovieDao.java:103)     - ======================
+2022-03-08 21:14:54,822 DEBUG [main] cmn.LoggerManager (MovieDao.java:104)     - IOExceptionC:\DCOM_20220127\01_JAVA\workspace\Java_MC\src\com\pcwk\mc\movie.csv (지정된 경로를 찾을 수 없습니다)
+2022-03-08 21:14:54,823 DEBUG [main] cmn.LoggerManager (MovieDao.java:105)     - ======================
+2022-03-08 21:14:54,823 DEBUG [main] cmn.LoggerManager (MovieDao.java:25)     - 파일 읽기 실패
+2022-03-08 21:15:32,942 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 21:16:26,772 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 21:16:44,507 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 21:17:39,568 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 21:18:02,155 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 22:04:12,021 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:07:57,356 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:10:10,328 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:11:22,510 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:13:37,185 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:14:44,007 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:15:01,818 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:15:47,211 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:17:17,564 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:20:05,737 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:40:55,562 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:41:17,174 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:41:57,286 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:53:22,166 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-08 23:55:31,413 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 00:04:01,146 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 00:04:47,535 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 00:15:42,761 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 00:19:06,858 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 00:29:37,739 DEBUG [main] cmn.LoggerManager (MovieDao.java:25)     - 파일 읽기 실패
+2022-03-09 00:32:10,618 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 00:39:52,225 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 12:04:36,390 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 12:05:23,452 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공
+2022-03-09 12:06:53,878 DEBUG [main] cmn.LoggerManager (MovieDao.java:28)     - 파일 읽기 성공

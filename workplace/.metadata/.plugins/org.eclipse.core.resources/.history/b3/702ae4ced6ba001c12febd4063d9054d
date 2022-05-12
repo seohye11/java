@@ -1,0 +1,40 @@
+package com.pcwk.board;
+
+import java.util.List;
+
+import com.pcwk.cmn.DTO;
+import com.pcwk.cmn.WorkDiv;
+
+public class BoardDao implements WorkDiv<BoardVO> {
+
+	@Override
+	public List<BoardVO> doRetrieve(DTO dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int doSave(BoardVO dto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int doDelete(BoardVO dto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public BoardVO doSelectOne(BoardVO dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int doUpdate(BoardVO dto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

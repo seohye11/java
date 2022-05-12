@@ -1,0 +1,81 @@
+package com.pcwk.board;
+
+import org.apache.log4j.Logger;
+
+import com.pcwk.cmn.SawonVO;
+import com.pcwk.cmn.SearchVO;
+
+public class BoardMain {
+	
+	final Logger LOG = Logger.getLogger(getClass());
+	private BoardDao dao;
+	private BoardVO board01;
+	private SearchVO search01;
+	
+	public BoardMain() {
+		dao = new BoardDao();
+		board01 = new BoardVO(900001, "제목_900001", "내용_90001", 0, "", "pcwk", "","pcwk");
+		
+		search01 = new SearchVO("", "", 10, 1);
+	}
+	
+	public void doSave() {
+		int flag = dao.doSave(board01);
+		if(1 == flag) {
+			LOG.debug("-----------------------------------");
+			LOG.debug("              등록 성공               ");
+			LOG.debug("-----------------------------------");
+		}else {
+			LOG.debug("-----------------------------------");
+			LOG.debug("              등록 실패               ");
+			LOG.debug("-----------------------------------");
+			
+		}
+	}
+	
+	public void doDelete() {
+		int flag = dao.doDelete(board01);
+		if(1 == flag) {
+			LOG.debug("-----------------------------------");
+			LOG.debug("              삭제 성공               ");
+			LOG.debug("-----------------------------------");
+		}else {
+			LOG.debug("-----------------------------------");
+			LOG.debug("              삭제 실패               ");
+			LOG.debug("-----------------------------------");
+		}
+	}
+	
+	public void doSelectOne() {
+		BoardVO outVO = dao.doSelectOne(board01);
+		if(null != outVO) {
+			LOG.debug("-----------------------------------");
+			LOG.debug("              조회 성공               ");
+			LOG.debug("-----------------------------------");
+		}else {
+			LOG.debug("-----------------------------------");
+			LOG.debug("              조회 실패               ");
+			LOG.debug("-----------------------------------");
+		}
+	}	
+	
+	
+
+	public static void main(String[] args) {
+		
+		BoardMain main = new BoardMain();
+		
+		//삭제
+		main.doDelete();
+		
+		//등록
+		main.doSave();
+		
+		//조회
+		main.doSelectOne();
+
+	
+
+	}
+
+}

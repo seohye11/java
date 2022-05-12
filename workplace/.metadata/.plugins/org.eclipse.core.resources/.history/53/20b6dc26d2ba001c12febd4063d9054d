@@ -1,0 +1,20 @@
+package com.pcwk.board;
+
+import com.pcwk.cmn.DTO;
+
+public class BoardVO extends DTO {
+
+	private int seq       ;
+	private String title     ;
+	private String contents  ;
+	private int read_cnt  ;
+	private String reg_dt	 ;
+	private String reg_id	 ;
+	private String mod_dt	 ;
+	private String mod_id	 ;
+	
+	public BoardVO() {}
+	
+	
+
+}

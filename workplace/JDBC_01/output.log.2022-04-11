@@ -1,0 +1,147 @@
+2022-04-11 16:36:21,388 DEBUG [main] cmn.SawonDao      (SawonDao.java:204)     - query : 
+SELECT tt1.rnum as num,                                     
+       tt1.empno,                                           
+       tt1.ename,                                           
+       TO_CHAR(tt1.hiredate,'YYYY/MM/DD') AS hiredate,      
+       tt1.deptno                                           
+FROM (                                                      
+      SELECT ROWNUM AS rnum, t1.*                           
+      FROM (                                                
+            SELECT *                                        
+            FROM sawon                                      
+WHERE ename LIKE ? || '%'             --조건                                           
+            ORDER BY hiredate DESC                          
+           )t1                                              
+     WHERE ROWNUM <= (?*(?-1)+?)                            
+)tt1                                                        
+WHERE rnum >= (?*(?-1)+1)                                   
+
+2022-04-11 16:36:21,393 DEBUG [main] cmn.SawonDao      (SawonDao.java:205)     - param : SearchVO [searchDiv=20, searchWord=pcwk8, pageSize=10, pageNum=1, toString()=DTO [no=0]]
+2022-04-11 16:45:51,175 DEBUG [main] cmn.SawonDao      (SawonDao.java:111)     - connection : oracle.jdbc.driver.T4CConnection@1190200a
+2022-04-11 16:45:51,181 DEBUG [main] cmn.SawonDao      (SawonDao.java:204)     - query : 
+SELECT tt1.rnum as num,                                     
+       tt1.empno,                                           
+       tt1.ename,                                           
+       TO_CHAR(tt1.hiredate,'YYYY/MM/DD') AS hiredate,      
+       tt1.deptno                                           
+FROM (                                                      
+      SELECT ROWNUM AS rnum, t1.*                           
+      FROM (                                                
+            SELECT *                                        
+            FROM sawon                                      
+WHERE ename LIKE ? || '%'             --조건                                           
+            ORDER BY hiredate DESC                          
+           )t1                                              
+     WHERE ROWNUM <= (?*(?-1)+?)                            
+)tt1                                                        
+WHERE rnum >= (?*(?-1)+1)                                   
+
+2022-04-11 16:45:51,182 DEBUG [main] cmn.SawonDao      (SawonDao.java:205)     - param : SearchVO [searchDiv=20, searchWord=pcwk8, pageSize=10, pageNum=1, toString()=DTO [no=0]]
+2022-04-11 16:45:51,382 DEBUG [main] cmn.SawonMain     (SawonMain.java:108)     - ----------------------------
+2022-04-11 16:45:51,385 DEBUG [main] cmn.SawonMain     (SawonMain.java:109)     -         목록 조회 실패   
+2022-04-11 16:45:51,385 DEBUG [main] cmn.SawonMain     (SawonMain.java:110)     - ----------------------------
+2022-04-11 16:47:20,462 DEBUG [main] cmn.SawonDao      (SawonDao.java:111)     - connection : oracle.jdbc.driver.T4CConnection@1190200a
+2022-04-11 16:47:20,466 DEBUG [main] cmn.SawonDao      (SawonDao.java:367)     - query : 
+DELETE FROM sawon  
+WHERE empno = ?    
+
+2022-04-11 16:47:20,466 DEBUG [main] cmn.SawonDao      (SawonDao.java:368)     - param : 
+SawonVO [empno=8888, ename=카카오, hiredate=, deptno=20, toString()=DTO [no=0]]
+2022-04-11 16:47:20,559 DEBUG [main] cmn.SawonDao      (SawonDao.java:381)     - flag : 1
+2022-04-11 16:47:20,561 DEBUG [main] cmn.SawonMain     (SawonMain.java:40)     - ----------------------------
+2022-04-11 16:47:20,561 DEBUG [main] cmn.SawonMain     (SawonMain.java:41)     -         삭제 성공   
+2022-04-11 16:47:20,562 DEBUG [main] cmn.SawonMain     (SawonMain.java:42)     - ----------------------------
+2022-04-11 16:47:20,633 DEBUG [main] cmn.SawonDao      (SawonDao.java:111)     - connection : oracle.jdbc.driver.T4CConnection@7d3d101b
+2022-04-11 16:47:20,634 DEBUG [main] cmn.SawonDao      (SawonDao.java:306)     - -------------------
+2022-04-11 16:47:20,634 DEBUG [main] cmn.SawonDao      (SawonDao.java:307)     -  INSERT INTO sawon ( 
+     empno,          
+     ename,          
+     hiredate,       
+     deptno          
+ ) VALUES (          
+     ?,              
+     ?,              
+     sysdate,        
+     ?               
+ )                   
+
+2022-04-11 16:47:20,635 DEBUG [main] cmn.SawonDao      (SawonDao.java:308)     - param : SawonVO [empno=8888, ename=카카오, hiredate=, deptno=20, toString()=DTO [no=0]]
+2022-04-11 16:47:20,635 DEBUG [main] cmn.SawonDao      (SawonDao.java:309)     - -------------------
+2022-04-11 16:47:20,647 DEBUG [main] cmn.SawonDao      (SawonDao.java:322)     - flag : 1
+2022-04-11 16:47:20,648 DEBUG [main] cmn.SawonMain     (SawonMain.java:27)     - ----------------------------
+2022-04-11 16:47:20,648 DEBUG [main] cmn.SawonMain     (SawonMain.java:28)     -         등록 성공   
+2022-04-11 16:47:20,649 DEBUG [main] cmn.SawonMain     (SawonMain.java:29)     - ----------------------------
+2022-04-11 16:47:20,702 DEBUG [main] cmn.SawonDao      (SawonDao.java:111)     - connection : oracle.jdbc.driver.T4CConnection@5e403b4a
+2022-04-11 16:47:20,703 DEBUG [main] cmn.SawonDao      (SawonDao.java:53)     - query: 
+ MERGE INTO sawon ta                                 
+ USING ( SELECT ?        AS empno,                   
+                ?        AS ename,                   
+                SYSDATE  AS hiredate,                
+                ?        AS deptno                   
+         FROM dual                                   
+ )tb                                                 
+ ON (ta.empno = tb.empno)                            
+ WHEN MATCHED THEN                                   
+   UPDATE SET ta.ename = tb.ename,                   
+              ta.hiredate = tb.hiredate,             
+              ta.deptno = tb.deptno                  
+ WHEN NOT MATCHED THEN                               
+   INSERT (ta.empno,ta.ename,ta.hiredate,ta.deptno)  
+   VALUES (tb.empno,tb.ename,tb.hiredate,tb.deptno)  
+
+2022-04-11 16:47:20,704 DEBUG [main] cmn.SawonDao      (SawonDao.java:54)     - param: 
+SawonVO [empno=8888, ename=kakaoUU, hiredate=, deptno=23, toString()=DTO [no=0]]
+2022-04-11 16:47:20,713 DEBUG [main] cmn.SawonDao      (SawonDao.java:67)     - flag: 1
+2022-04-11 16:47:20,714 DEBUG [main] cmn.SawonMain     (SawonMain.java:85)     - ----------------------------
+2022-04-11 16:47:20,714 DEBUG [main] cmn.SawonMain     (SawonMain.java:86)     -         upsert 성공   
+2022-04-11 16:47:20,715 DEBUG [main] cmn.SawonMain     (SawonMain.java:87)     - ----------------------------
+2022-04-11 16:47:20,756 DEBUG [main] cmn.SawonDao      (SawonDao.java:111)     - connection : oracle.jdbc.driver.T4CConnection@5be49b60
+2022-04-11 16:47:20,756 DEBUG [main] cmn.SawonDao      (SawonDao.java:503)     - query : 
+ UPDATE sawon                
+ 	SET ename = ?,          
+ 	    hiredate = SYSDATE, 
+ 	    deptno = ?          
+ WHERE empno = ?            
+
+2022-04-11 16:47:20,757 DEBUG [main] cmn.SawonDao      (SawonDao.java:504)     - param : SawonVO [empno=8888, ename=kakao_U, hiredate=, deptno=22, toString()=DTO [no=0]]
+2022-04-11 16:47:20,761 DEBUG [main] cmn.SawonDao      (SawonDao.java:517)     - flag : 1
+2022-04-11 16:47:20,762 DEBUG [main] cmn.SawonMain     (SawonMain.java:70)     - ----------------------------
+2022-04-11 16:47:20,762 DEBUG [main] cmn.SawonMain     (SawonMain.java:71)     -         수정 성공   
+2022-04-11 16:47:20,762 DEBUG [main] cmn.SawonMain     (SawonMain.java:72)     - ----------------------------
+2022-04-11 16:47:20,802 DEBUG [main] cmn.SawonDao      (SawonDao.java:111)     - connection : oracle.jdbc.driver.T4CConnection@662706a7
+2022-04-11 16:47:20,802 DEBUG [main] cmn.SawonDao      (SawonDao.java:430)     - query: 
+ SELECT empno,                                               
+       ename,                                               
+       TO_CHAR(hiredate,'YYYY/MM/DD HH24:MI:SS') hiredate,  
+       deptno                                               
+FROM sawon                                                  
+WHERE empno = ?                                             
+
+2022-04-11 16:47:20,802 DEBUG [main] cmn.SawonDao      (SawonDao.java:431)     - param : SawonVO [empno=8888, ename=kakao_U, hiredate=, deptno=22, toString()=DTO [no=0]]
+2022-04-11 16:47:20,859 DEBUG [main] cmn.SawonDao      (SawonDao.java:449)     - outVO: SawonVO [empno=8888, ename=kakao_U, hiredate=2022/04/11 16:47:20, deptno=22, toString()=DTO [no=0]]
+2022-04-11 16:47:20,860 DEBUG [main] cmn.SawonMain     (SawonMain.java:53)     - ----------------------------
+2022-04-11 16:47:20,861 DEBUG [main] cmn.SawonMain     (SawonMain.java:54)     -         조회 성공   
+2022-04-11 16:47:20,861 DEBUG [main] cmn.SawonMain     (SawonMain.java:55)     - ----------------------------
+2022-04-11 16:47:20,899 DEBUG [main] cmn.SawonDao      (SawonDao.java:111)     - connection : oracle.jdbc.driver.T4CConnection@4fad9bb2
+2022-04-11 16:47:20,899 DEBUG [main] cmn.SawonDao      (SawonDao.java:204)     - query : 
+SELECT tt1.rnum as num,                                     
+       tt1.empno,                                           
+       tt1.ename,                                           
+       TO_CHAR(tt1.hiredate,'YYYY/MM/DD') AS hiredate,      
+       tt1.deptno                                           
+FROM (                                                      
+      SELECT ROWNUM AS rnum, t1.*                           
+      FROM (                                                
+            SELECT *                                        
+            FROM sawon                                      
+WHERE ename LIKE ? || '%'             --조건                                           
+            ORDER BY hiredate DESC                          
+           )t1                                              
+     WHERE ROWNUM <= (?*(?-1)+?)                            
+)tt1                                                        
+WHERE rnum >= (?*(?-1)+1)                                   
+
+2022-04-11 16:47:20,900 DEBUG [main] cmn.SawonDao      (SawonDao.java:205)     - param : SearchVO [searchDiv=20, searchWord=pcwk8, pageSize=10, pageNum=1, toString()=DTO [no=0]]
+2022-04-11 16:47:20,904 DEBUG [main] cmn.SawonMain     (SawonMain.java:108)     - ----------------------------
+2022-04-11 16:47:20,904 DEBUG [main] cmn.SawonMain     (SawonMain.java:109)     -         목록 조회 실패   
+2022-04-11 16:47:20,905 DEBUG [main] cmn.SawonMain     (SawonMain.java:110)     - ----------------------------

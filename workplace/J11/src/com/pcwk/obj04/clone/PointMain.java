@@ -1,0 +1,20 @@
+package com.pcwk.obj04.clone;
+
+public class PointMain {
+
+	public static void main(String[] args) {
+		
+		Point orgPoint = new Point(11, 13);
+		
+		Point copyPoint = (Point) orgPoint.clone();
+		
+		//toString() 오버라이드
+		System.out.println(orgPoint);
+		
+		//clone()이 후 멤버값
+		System.out.println(copyPoint);
+		
+
+	}
+
+}

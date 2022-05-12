@@ -1,0 +1,81 @@
+package com.pcwk.board;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.pcwk.cmn.DTO;
+import com.pcwk.cmn.PConnection;
+import com.pcwk.cmn.WorkDiv;
+
+public class BoardDao implements WorkDiv<BoardVO> {
+	
+	final Logger LOG = Logger.getLogger(getClass());
+	
+	private PConnection pConnection;
+	
+	public BoardDao() {
+		pConnection = new PConnection();
+	}
+
+	@Override
+	public List<BoardVO> doRetrieve(DTO dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int doSave(BoardVO dto) {
+		
+		int flag = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		StringBuilder sb = new StringBuilder(100);
+		
+		//1. DB연결
+		conn = pConnection.connect();
+		
+		//2. SQL 작성
+		INSERT INTO board (
+			    seq,
+			    title,
+			    contents,
+			    read_cnt,
+			    reg_id,
+			    mod_id
+			) VALUES (
+			    :v0,
+			    :v1,
+			    :v2,
+			    :v3,
+			    :v5,
+			    :v7
+			);
+		
+		
+		
+		
+		return flag;
+	}
+
+	@Override
+	public int doDelete(BoardVO dto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public BoardVO doSelectOne(BoardVO dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int doUpdate(BoardVO dto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
